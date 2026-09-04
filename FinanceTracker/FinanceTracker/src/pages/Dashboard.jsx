@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Summary from "../components/Summary";
 
 export default function Dashboard(transactions = []) {
   const income = transactions.filter((t) => t.type === "Receita").reduce((acc,t) => acc + Number(t.amount),0);
@@ -14,6 +15,7 @@ export default function Dashboard(transactions = []) {
         <h1>Personal Finance Tracker</h1>
         <p>Gerencie suas finanças pessoais de forma simples, acompanhando suas receitas, despesas e o saldo em tempo real.</p>
       </main>
+      <Summary income={income} outcome={outcome} total={total}/>
       <main>
         <h2>Ações Rápidas</h2>
         <div>
