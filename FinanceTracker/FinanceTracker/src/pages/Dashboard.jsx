@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import Summary from "../components/Summary";
 
-export default function Dashboard(transactions = []) {
-  const income = transactions.filter((t) => t.type === "Receita").reduce((acc,t) => acc + Number(t.amount),0);
+export default function Dashboard({transactions = []}) {
+  const list = Array.isArray(transactions) ? transactions : [];
+  const income = list.filter((t) => t.type === "Receita").reduce((acc,t) => acc + Number(t.amount),0);
   //Entrada
   //filter percorre transactions e separa o que é receita do que é despesa
-  const outcome = transactions.filter((t) => t.type === "Despesa").reduce((acc,t) => acc + Number(t.amount),0);
+  const outcome = list.filter((t) => t.type === "Despesa").reduce((acc,t) => acc + Number(t.amount),0);
   //Saída
   //reduce passa por cada item filtrado, converte o valor para número e acumula a soma de cada tipo
   const total = income - outcome
@@ -20,6 +21,7 @@ export default function Dashboard(transactions = []) {
         <h2>Ações Rápidas</h2>
         <div>
           <Link to="/transactions/new">+ Nova Movimentação</Link>
+          <br />
           <Link to="/transactions">Ver Histórico Completo</Link>
         </div>
       </main>
