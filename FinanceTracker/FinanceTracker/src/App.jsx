@@ -28,8 +28,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
-          <Route path="/transactions" element={<Transactions/>}/>
-          <Route path="/transactions/new" element={<TransactionNew/>}/>
+          <Route path="/transactions" element={<Transactions onDeleteTransaction={handleDeleteTransaction}/>}/>
+          <Route path="/transactions/new" element={<TransactionNew onAddTransaction={handleAddTransaction}/>}/>
           <Route path="/transactions/:id" element={<TransactionDetails/>}/>
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
