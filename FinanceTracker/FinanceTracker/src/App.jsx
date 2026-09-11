@@ -7,7 +7,7 @@ import TransactionDetails from "./pages/TransactionDetails";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  
+
   return (
     <>
       <BrowserRouter>
@@ -16,7 +16,7 @@ function App() {
           <Route path="/transactions" element={<Transactions/>}/>
           <Route path="/transactions/new" element={<TransactionNew/>}/>
           <Route path="/transactions/:id" element={<TransactionDetails/>}/>
-          <Route path="pagenotfound" element={<NotFound/>}/>
+          <Route path="/*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </>
