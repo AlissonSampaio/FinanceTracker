@@ -11,6 +11,15 @@ function App() {
   // Busca transações do LocalStorage; se não houver transações, retorna um array vazio
   const [transactions, setTransactions] = useState(() => {
     const saved = localStorage.getItem('@finance-tracker:transactions');
+    //Garante que o parse será feito apenas se for algo diferente de null ou da string 'undefined'
+    if (saved && saved !== 'undefined'){
+      try{
+        return JSON.parse(saved);
+      } catch (error){
+        console.error('Erro ao ler do LocalStorage:', error);
+        return [];
+      }
+    }
     return saved ? JSON.parse(saved) : [];
   })
   // Sincroniza alterações com LocalStorage
