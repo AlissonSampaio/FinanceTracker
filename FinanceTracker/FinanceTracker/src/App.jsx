@@ -17,6 +17,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem('@finance-tracker:transactions', JSON.stringify(transactions));
   }, [transactions]);
+  const handleAddTransaction = (newTransaction) => {
+    setTransactions((prev) => [newTransaction, ...prev])
+  }
+  const handleDeleteTransaction = (id) => {
+    setTransactions((prev) => prev.filter((t) => t.id !== id))
+  }
   return (
     <>
       <BrowserRouter>
