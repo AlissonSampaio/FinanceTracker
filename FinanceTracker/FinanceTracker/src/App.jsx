@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
@@ -9,8 +7,7 @@ import TransactionDetails from "./pages/TransactionDetails";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  
   return (
     <>
       <BrowserRouter>
