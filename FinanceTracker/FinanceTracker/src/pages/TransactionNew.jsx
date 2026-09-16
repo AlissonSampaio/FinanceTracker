@@ -22,6 +22,22 @@ export default function TransactionNew() {
       [name]: value,
     }));
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.description.trim()){
+      setErrorMessage('A descrição é obrigatória.');
+      return;
+    }
+  }
+  const numericAmount = Number(formData.amount);
+  if (!formData.amount || numericAmount <= 0){
+    setErrorMessage('O valor deve um número maior que zero.');
+    return;
+  }
+  if (!formData.categoria){
+    setErrorMessage('Selecione uma categoria.');
+    return;
+  }
   return (
     <>
       <h1>Nova Transação</h1>
