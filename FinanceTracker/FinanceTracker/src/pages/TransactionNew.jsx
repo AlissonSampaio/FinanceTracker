@@ -6,10 +6,10 @@ export default function TransactionNew({onAddTransaction}) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    descricao: '',
-    quantidade: '',
-    tipo: 'Receita',
-    categoria: CATEGORIES[0] || '',
+    description: '',
+    amount: '',
+    type: 'Receita',
+    category: CATEGORIES[0] || '',
     date: new Date().toISOString.split('T')[0],
   });
 
@@ -34,23 +34,62 @@ export default function TransactionNew({onAddTransaction}) {
     setErrorMessage('O valor deve um número maior que zero.');
     return;
   }
-  if (!formData.categoria){
+  if (!formData.category){
     setErrorMessage('Selecione uma categoria.');
     return;
   }
   const newTransaction = {
     id: crypto.randomUUID(),
-    descricao: formData.descricao,
+    description: formData.description,
     amount: numericAmount,
-    tipo: formData.tipo,
-    categoria: formData.categoria,
+    type: formData.type,
+    category: formData.category,
     date: formData.date,
   }
   onAddTransaction(newTransaction);
   navigate('/transactions');
   return (
     <>
-      <h1>Nova Transação</h1>
+      <header><h1>Nova Transação</h1></header>
+      {errorMessage && (
+        <div>
+          <p>{errorMessage}</p>
+        </div>
+      )}
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="description">Descrição</label>
+          <input type="text" id="description" name="description" 
+          placeholder="Ex: Salário, Supermercado" value={formData.descricao} onChange={handleChange} required/>
+        </div>
+        <div>
+          <label htmlFor="amount">Valor (R$)</label>
+          <input type="number" id="amount" name="amount" step="0.01" min="0.01" placeholder="0,00" value={formData.amount} onChange={handleChange} required/>
+        </div>
+        <div>
+          <label htmlFor="type">Tipo</label>
+          <select name="type" id="type" value={formData.type} onChange={handleChange}>
+            <option value="Receita">Receita</option>
+            <option value="Despesa">Despesa</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="category">Categoria</label>
+          <select name="category" id="category" value={formData.category} onChange={handleChange}>
+            {CATEGORIES.map((cat) => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label htmlFor="date">Data</label>
+          <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} required/>
+        </div>
+        <div>
+          <button type="button" onClick={() => navigate('/transactions')}>Cancelar</button>
+          <button type="submit">Salvar Movimentação</button>
+        </div>
+      </form>
     </>
   )
 }
