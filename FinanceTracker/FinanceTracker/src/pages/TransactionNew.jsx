@@ -12,6 +12,16 @@ export default function TransactionNew() {
     categoria: CATEGORIES[0] || '',
     date: new Date().toISOString.split('T')[0],
   });
+
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }
   return (
     <>
       <h1>Nova Transação</h1>
