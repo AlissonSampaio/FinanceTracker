@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CATEGORIES } from "../categories/categories";
 
-export default function TransactionNew() {
+export default function TransactionNew({onAddTransaction}) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -38,6 +38,16 @@ export default function TransactionNew() {
     setErrorMessage('Selecione uma categoria.');
     return;
   }
+  const newTransaction = {
+    id: crypto.randomUUID(),
+    descricao: formData.descricao,
+    amount: numericAmount,
+    tipo: formData.tipo,
+    categoria: formData.categoria,
+    date: formData.date,
+  }
+  onAddTransaction(newTransaction);
+  navigate('/transactions');
   return (
     <>
       <h1>Nova Transação</h1>
