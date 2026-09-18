@@ -10,7 +10,7 @@ export default function TransactionNew({onAddTransaction}) {
     amount: '',
     type: 'Receita',
     category: CATEGORIES[0] || '',
-    date: new Date().toISOString.split('T')[0],
+    date: new Date().toISOString().split('T')[0],
   });
 
   const [errorMessage, setErrorMessage] = useState('');
