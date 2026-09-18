@@ -61,7 +61,7 @@ export default function TransactionNew({onAddTransaction}) {
         <div>
           <label htmlFor="description">Descrição</label>
           <input type="text" id="description" name="description" 
-          placeholder="Ex: Salário, Supermercado" value={formData.descricao} onChange={handleChange} required/>
+          placeholder="Ex: Salário, Supermercado" value={formData.description} onChange={handleChange} required/>
         </div>
         <div>
           <label htmlFor="amount">Valor (R$)</label>
