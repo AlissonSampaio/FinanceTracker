@@ -28,26 +28,27 @@ export default function TransactionNew({onAddTransaction}) {
       setErrorMessage('A descrição é obrigatória.');
       return;
     }
-  }
-  const numericAmount = Number(formData.amount);
-  if (!formData.amount || numericAmount <= 0){
-    setErrorMessage('O valor deve um número maior que zero.');
-    return;
-  }
-  if (!formData.category){
-    setErrorMessage('Selecione uma categoria.');
-    return;
-  }
-  const newTransaction = {
-    id: crypto.randomUUID(),
-    description: formData.description,
-    amount: numericAmount,
-    type: formData.type,
-    category: formData.category,
-    date: formData.date,
-  }
-  onAddTransaction(newTransaction);
-  navigate('/transactions');
+    const numericAmount = Number(formData.amount);
+    if (!formData.amount || numericAmount <= 0){
+      setErrorMessage('O valor deve um número maior que zero.');
+      return;
+    }
+    if (!formData.category){
+      setErrorMessage('Selecione uma categoria.');
+      return;
+    }
+    const newTransaction = {
+      id: crypto.randomUUID(),
+      description: formData.description,
+      amount: numericAmount,
+      type: formData.type,
+      category: formData.category,
+      date: formData.date,
+    }
+    onAddTransaction(newTransaction);
+    navigate('/transactions');
+  };
+  
   return (
     <>
       <header><h1>Nova Transação</h1></header>
