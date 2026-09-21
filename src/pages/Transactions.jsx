@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../categories/categories";
+import { formatCurrency } from "../utils/formatCurrency";
 
-export default function Transactions() {
+export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
   const [selectedType, setSelectedType] = useState('Todas');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
@@ -40,6 +41,37 @@ export default function Transactions() {
             ))}
           </select>
         </div>
+      </section>
+      <section>
+        {filteredTransactions.length === 0 ? (
+          <p>Nenhuma transação encontrada</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>Descrição</tr>
+              <tr>Valor</tr>
+              <tr>Tipo</tr>
+              <tr>Categoria</tr>
+              <tr>Data</tr>
+              <tr>Ações</tr>
+            </thead>
+            <tbody>
+              {filteredTransactions.map((transaction) => (
+                <tr key={transaction.id}>
+                  <td>{transaction.description}</td>
+                  <td>{formatCurrency(transaction.amount)}</td>
+                  <td>{transaction.type}</td>
+                  <td>{transaction.category}</td>
+                  <td>{formatDate(transaction.date)}</td>
+                  <td>
+                    <Link to={`/transactions/${transaction.id}`}>Ver detalhes</Link>
+                    <button type="button" onClick={() => onDeleteTransaction(transaction.id)}>Excluir</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </section>
     </>
   )
