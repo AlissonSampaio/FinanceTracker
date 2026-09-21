@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CATEGORIES } from "../categories/categories";
 import { formatCurrency } from "../utils/formatCurrency";
+import { formatDate } from "../utils/formatDate";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
