@@ -1,9 +1,13 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function Transactions() {
   return (
     <>
-      <h1>Transações</h1>
+      <header>
+        <h1>Transações</h1>
+        <Link to="/transactions/new">+ Nova Transação</Link>
+      </header>
+      
     </>
   )
 }
