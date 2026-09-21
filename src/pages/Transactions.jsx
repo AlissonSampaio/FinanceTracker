@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Transactions() {
+  // Filtros do tipo e da categoria
+  const [selectedType, setSelectedType] = useState('Todas');
+  const [selectedCategory, setSelectedCategory] = useState('Todas');
   return (
     <>
       <header>
