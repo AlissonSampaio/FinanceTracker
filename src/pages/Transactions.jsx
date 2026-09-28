@@ -49,12 +49,12 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
         ) : (
           <table>
             <thead>
-              <tr>Descrição</tr>
-              <tr>Valor</tr>
-              <tr>Tipo</tr>
-              <tr>Categoria</tr>
-              <tr>Data</tr>
-              <tr>Ações</tr>
+              <td>Descrição</td>
+              <td>Valor</td>
+              <td>Tipo</td>
+              <td>Categoria</td>
+              <td>Data</td>
+              <td>Ações</td>
             </thead>
             <tbody>
               {filteredTransactions.map((transaction) => (
