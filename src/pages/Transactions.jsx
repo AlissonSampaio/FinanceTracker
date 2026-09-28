@@ -29,8 +29,8 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
           <label htmlFor="type-filter">Filtrar por Tipo:</label>
           <select id="type-filter" value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
             <option value="Todas">Todas</option>
-            <option value="Receitas">Receitas</option>
-            <option value="Despesas">Despesas</option>
+            <option value="Receita">Receitas</option>
+            <option value="Despesa">Despesas</option>
           </select>
         </div>
         <div>
