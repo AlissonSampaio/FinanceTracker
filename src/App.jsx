@@ -39,7 +39,7 @@ function App() {
           <Route path="/" element={<Dashboard/>}/>
           <Route path="/transactions" element={<Transactions transactions={transactions} onDeleteTransaction={handleDeleteTransaction}/>}/>
           <Route path="/transactions/new" element={<TransactionNew onAddTransaction={handleAddTransaction}/>}/>
-          <Route path="/transactions/:id" element={<TransactionDetails/>}/>
+          <Route path="/transactions/:id" element={<TransactionDetails transactions={transactions}/>}/>
           <Route path="/*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
