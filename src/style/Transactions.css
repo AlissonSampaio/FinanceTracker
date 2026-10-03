@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.transactions{
+    background-color: #0F131C; color: #DFE2EE;
+}
+header{
+    display: flex; justify-content: space-between; align-items: center;
+}
+.Title-transacao{
+    color: #DFE2EE;
+    font-family: "Plus Jakarta Sans";
+    
+}
+.nova-transacao{
+    color: #0D0096; font-family: 'Inter'; font-weight: bold; text-decoration: none;
+    background-color: #8083FF; padding: 10px 16px; border-radius: 10px;
+}
+.tds-title{
+    font-family: "Inter"; font-weight: bold; font-size: 11px; padding: 0px 16px;
+}
+.tds-info{
+    font-family: "Inter"; font-size: 11px;
+}
+.sem-transacao{
+    font-family: "Inter"; font-size: 11px;
+}
+.descricao{
+    padding: 16px 174.15px 16px 16px;
+}
+.valor{
+    padding: 16px 75.02px 16px 16px;
+}
+.tipo{
+    padding: 16px 75.02px 16px 16px;
+}
+.categoria{
+    padding: 16px 50.1px 16px 16px;
+}
+.data{
+    padding: 16px 50.1px 16px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acoes{
+    padding: 16px 50.1px 16px 16px;
+}
+.detalhes-transacao{
+    color: #DFE2EE;
+    text-decoration: none;
+}
+.Lixo{
+    border: 0px;
+    background-color: #0F131C;
+}

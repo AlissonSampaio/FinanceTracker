@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { CATEGORIES } from "../categories/categories";
 import { formatCurrency } from "../utils/formatCurrency";
 import { formatDate } from "../utils/formatDate";
+import '../style/Transactions.css';
+import Lixo from "../assets/Lixo.png";
+import {Clock} from "../assets/Data-clock.png";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
@@ -19,10 +22,10 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
     return matchesType && matchesCategory;
   });
   return (
-    <>
+    <div className="transactions">
       <header>
-        <h1>Transações</h1>
-        <Link to="/transactions/new">+ Nova Transação</Link>
+        <h1 className="Title-transacao">Transações</h1>
+        <Link to="/transactions/new" className="nova-transacao">+ Nova Transação</Link>
       </header>
       <section>
         <div>
@@ -45,30 +48,30 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
       </section>
       <section>
         {filteredTransactions.length === 0 ? (
-          <p>Nenhuma transação encontrada</p>
+          <p className="sem-transacao">Nenhuma transação encontrada</p>
         ) : (
           <table>
             <thead>
-              <tr>
-                <td>Descrição</td>
-                <td>Valor</td>
-                <td>Tipo</td>
-                <td>Categoria</td>
-                <td>Data</td>
-                <td>Ações</td>
+              <tr className="tds-title">
+                <td className="descricao">DESCRIÇÃO</td>
+                <td className="valor">VALOR</td>
+                <td className="tipo">TIPO</td>
+                <td className="categoria">CATEGORIA</td>
+                <td className="data">DATA</td>
+                <td className="acoes">AÇÕES</td>
               </tr>
             </thead>
             <tbody>
               {filteredTransactions.map((transaction) => (
-                <tr key={transaction.id}>
-                  <td>{transaction.description}</td>
-                  <td>{formatCurrency(transaction.amount)}</td>
-                  <td>{transaction.type}</td>
-                  <td>{transaction.category}</td>
-                  <td>{formatDate(transaction.date)}</td>
-                  <td>
-                    <Link to={`/transactions/${transaction.id}`}>Ver detalhes</Link>
-                    <button type="button" onClick={() => onDeleteTransaction(transaction.id)}>Excluir</button>
+                <tr key={transaction.id} className="tds-info">
+                  <td className="">{transaction.description}</td>
+                  <td className="">{formatCurrency(transaction.amount)}</td>
+                  <td className="">{transaction.type}</td>
+                  <td className="">{transaction.category}</td>
+                  <td className=""> <img src={Clock} alt=""/> {formatDate(transaction.date)}</td>
+                  <td className="">
+                    <Link to={`/transactions/${transaction.id}`} className="detalhes-transacao">Detalhes</Link>
+                    <button type="button" onClick={() => onDeleteTransaction(transaction.id)} className="Lixo"><img src={Lixo} alt=""/></button>
                   </td>
                 </tr>
               ))}
@@ -76,6 +79,7 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
           </table>
         )}
       </section>
-    </>
+    </div>
+    
   )
 }
