@@ -5,7 +5,7 @@ import { formatCurrency } from "../utils/formatCurrency";
 import { formatDate } from "../utils/formatDate";
 import '../style/Transactions.css';
 import Lixo from "../assets/Lixo.png";
-import {Clock} from "../assets/Data-clock.png";
+import Clock from "../assets/Data-clock.png";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
