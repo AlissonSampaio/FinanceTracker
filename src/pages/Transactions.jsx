@@ -64,12 +64,12 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
             <tbody>
               {filteredTransactions.map((transaction) => (
                 <tr key={transaction.id} className="tds-info">
-                  <td className="">{transaction.description}</td>
-                  <td className="">{formatCurrency(transaction.amount)}</td>
-                  <td className="">{transaction.type}</td>
-                  <td className="">{transaction.category}</td>
-                  <td className=""> <img src={Clock} alt=""/> {formatDate(transaction.date)}</td>
-                  <td className="">
+                  <td className="desc-info">{transaction.description}</td>
+                  <td className="valor-info">{formatCurrency(transaction.amount)}</td>
+                  <td className="tipo-info">{transaction.type}</td>
+                  <td className="category-info">{transaction.category}</td>
+                  <td className="data-info"> <img src={Clock} alt="" className="clock"/> {formatDate(transaction.date)}</td>
+                  <td className="acoes-info">
                     <Link to={`/transactions/${transaction.id}`} className="detalhes-transacao">Detalhes</Link>
                     <button type="button" onClick={() => onDeleteTransaction(transaction.id)} className="Lixo"><img src={Lixo} alt=""/></button>
                   </td>

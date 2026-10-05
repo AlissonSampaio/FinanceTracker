@@ -20,30 +20,51 @@ header{
 }
 .tds-info{
     font-family: "Inter"; font-size: 11px;
+    height: 100px;
 }
 .sem-transacao{
     font-family: "Inter"; font-size: 11px;
 }
 .descricao{
-    padding: 16px 174.15px 16px 16px;
+    padding: 16px 95px;
+}
+.desc-info{
+    padding: 0px 95px;
 }
 .valor{
-    padding: 16px 75.02px 16px 16px;
+    padding: 16px 45.47px;
 }
+.valor-info{padding-left: 30px;}
 .tipo{
-    padding: 16px 75.02px 16px 16px;
+    padding: 16px 45.6px;
+}
+.tipo-info{
+    margin-left: 5px; text-align: center;
 }
 .categoria{
-    padding: 16px 50.1px 16px 16px;
+    text-align: center; margin: 16px 32.7px;
+}
+.category-info{
+    display: flex; justify-content: center; align-items: center;
+    background-color: #31353E; border-radius: 5px;
+    padding: 3px 10px;
+    margin-top: 40px;
 }
 .data{
-    padding: 16px 50.1px 16px 16px;
+    padding: 16px 46px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.data-info{
+    padding-left: 16px;
+}
 .acoes{
-    padding: 16px 50.1px 16px 16px;
+    text-align: center;
+    padding: 16px 56.8px;
+}
+.acoes-info{
+    padding-left: 39.5px;
 }
 .detalhes-transacao{
     color: #DFE2EE;
@@ -52,4 +73,5 @@ header{
 .Lixo{
     border: 0px;
     background-color: #0F131C;
+    margin-left: 6px; margin-top: 2px;
 }
