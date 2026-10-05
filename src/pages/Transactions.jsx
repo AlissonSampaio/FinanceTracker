@@ -6,6 +6,7 @@ import { formatDate } from "../utils/formatDate";
 import '../style/Transactions.css';
 import Lixo from "../assets/Lixo.png";
 import Clock from "../assets/Data-clock.png";
+import Eye from "../assets/eye-details.png";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
@@ -70,7 +71,10 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
                   <td className="category-info">{transaction.category}</td>
                   <td className="data-info"> <img src={Clock} alt="" className="clock"/> {formatDate(transaction.date)}</td>
                   <td className="acoes-info">
-                    <Link to={`/transactions/${transaction.id}`} className="detalhes-transacao">Detalhes</Link>
+                    <div className="div-detalhes">
+                      <img src={Eye} alt="" />
+                      <Link to={`/transactions/${transaction.id}`} className="detalhes-transacao">Detalhes</Link>
+                    </div>
                     <button type="button" onClick={() => onDeleteTransaction(transaction.id)} className="Lixo"><img src={Lixo} alt=""/></button>
                   </td>
                 </tr>
