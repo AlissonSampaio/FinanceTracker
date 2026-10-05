@@ -66,6 +66,10 @@ header{
 .acoes-info{
     padding-left: 39.5px;
 }
+.div-detalhes{
+    display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;
+    background-color: #1C2028; padding-top: 10px; padding-bottom: 10px; border-radius: 5px;
+}
 .detalhes-transacao{
     color: #DFE2EE;
     text-decoration: none;
