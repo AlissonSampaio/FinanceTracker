@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .transactions{
-    background-color: #0F131C; color: #DFE2EE;
+    background-color: #0F131C; color: #DFE2EE; width: 100%; height: 100%;
 }
 header{
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: baseline;
 }
 .Title-transacao{
     color: #DFE2EE;
     font-family: "Plus Jakarta Sans";
-    
+}
+.subtitle{
+    text-transform: uppercase; color: #70FFBA; font-family: "Inter"; font-weight: 500;
+    background-color: #0E2828; padding: 2px 8px; border-radius: 10px; margin-left: 12px;
+}
+.title-and-info{display: flex; justify-content: center; flex-direction: column;}
+.title-main{display: flex; align-items: center;}
+.main-info{
+    color: #C7C4D7; line-height: 60%;
+    font-family: "Inter"; font-size: 14px;
 }
 .nova-transacao{
     color: #0D0096; font-family: 'Inter'; font-weight: bold; text-decoration: none;
     background-color: #8083FF; padding: 10px 16px; border-radius: 10px;
 }
+.tipo-filter, .categoria-filter{
+    font-family: "Inter";
+}
+.table{background-color: #171B23; width: 100%; border-radius: 10px; margin-top: 24px;}
 .tds-title{
-    font-family: "Inter"; font-weight: bold; font-size: 11px; padding: 0px 16px;
+    font-family: "Inter"; font-weight: bold; font-size: 11px; height: 50px;
 }
 .tds-info{
     font-family: "Inter"; font-size: 11px;
@@ -26,49 +39,47 @@ header{
     font-family: "Inter"; font-size: 11px;
 }
 .descricao{
-    padding: 16px 95px;
+    text-align: center;
+    padding-left: 55px; padding-right: 55px;
 }
 .desc-info{
-    padding: 0px 95px;
+    display: flex; justify-content: center;
+    font-size: 15px; font-family: "Plus Jakarta Sans";
 }
-.valor{
-    padding: 16px 45.47px;
-}
-.valor-info{padding-left: 30px;}
+.valor{text-align: center;}
+.valor-info{text-align: center;}
 .tipo{
-    padding: 16px 45.6px;
+    padding: 16px; text-align: center;
 }
 .tipo-info{
-    margin-left: 5px; text-align: center;
+    text-align: center;
 }
 .categoria{
-    text-align: center; margin: 16px 32.7px;
+    text-align: center; margin: 8px 32.7px;
 }
 .category-info{
-    display: flex; justify-content: center; align-items: center;
+    text-align: center; display: flex; justify-content: center; align-items: center;
     background-color: #31353E; border-radius: 5px;
     padding: 3px 10px;
     margin-top: 40px;
 }
 .data{
-    padding: 16px 46px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 16px 46px; text-align: center;
 }
 .data-info{
-    padding-left: 16px;
+    padding-left: 16px; text-align: center;
 }
 .acoes{
     text-align: center;
-    padding: 16px 56.8px;
+    padding-left: 16px;
 }
 .acoes-info{
-    padding-left: 39.5px;
+    padding-left: 16px;
+    display: flex; justify-content: center; align-items: center;
 }
 .div-detalhes{
-    display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;
-    background-color: #1C2028; padding-top: 10px; padding-bottom: 10px; border-radius: 5px;
+    display: flex; justify-content: space-around; align-items: center; flex-direction: row;
+    background-color: #1C2028; padding: 6px 10px; border-radius: 5px;
 }
 .detalhes-transacao{
     color: #DFE2EE;
@@ -76,6 +87,5 @@ header{
 }
 .Lixo{
     border: 0px;
-    background-color: #0F131C;
-    margin-left: 6px; margin-top: 2px;
+    background-color: #171B23;
 }
