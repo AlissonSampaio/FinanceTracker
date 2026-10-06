@@ -25,12 +25,18 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
   return (
     <div className="transactions">
       <header>
-        <h1 className="Title-transacao">Transações</h1>
+        <div className="title-and-info">
+          <div className="title-main">
+            <h1 className="Title-transacao">Transações</h1>
+            <h5 className="subtitle">live ledger</h5>
+          </div>
+          <span className="main-info"><p>Consulte, audite e filtre </p><p>todas as movimentações financeiras com</p> <p>precisão institucional.</p></span>
+        </div>
         <Link to="/transactions/new" className="nova-transacao">+ Nova Transação</Link>
       </header>
       <section>
         <div>
-          <label htmlFor="type-filter">Filtrar por Tipo:</label>
+          <label htmlFor="type-filter" className="tipo-filter">Filtrar por Tipo:</label>
           <select id="type-filter" value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
             <option value="Todas">Todas</option>
             <option value="Receita">Receitas</option>
@@ -38,7 +44,7 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
           </select>
         </div>
         <div>
-          <label htmlFor="category-filter">Filtrar por Categoria:</label>
+          <label htmlFor="category-filter" className="categoria-filter">Filtrar por Categoria:</label>
           <select id="category-filter" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
             <option value="Todas">Todas as Categorias</option>
             {CATEGORIES.map((category) => (
@@ -51,7 +57,7 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
         {filteredTransactions.length === 0 ? (
           <p className="sem-transacao">Nenhuma transação encontrada</p>
         ) : (
-          <table>
+          <table className="table">
             <thead>
               <tr className="tds-title">
                 <td className="descricao">DESCRIÇÃO</td>
@@ -67,9 +73,9 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
                 <tr key={transaction.id} className="tds-info">
                   <td className="desc-info">{transaction.description}</td>
                   <td className="valor-info">{formatCurrency(transaction.amount)}</td>
-                  <td className="tipo-info">{transaction.type}</td>
+                  <td className="tipo-info">• {transaction.type}</td>
                   <td className="category-info">{transaction.category}</td>
-                  <td className="data-info"> <img src={Clock} alt="" className="clock"/> {formatDate(transaction.date)}</td>
+                  <td className="data-info">{formatDate(transaction.date)}</td>
                   <td className="acoes-info">
                     <div className="div-detalhes">
                       <img src={Eye} alt="" />
