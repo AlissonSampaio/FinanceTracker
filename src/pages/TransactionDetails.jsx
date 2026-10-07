@@ -25,27 +25,33 @@ export default function TransactionDetails({transactions = []}) {
       <h1>Transação concluída</h1>
     </header>
     <section>
-      <div className="valor">
-        <strong>Valor Líquido Registrado</strong>
-        <span>{formatCurrency(transaction.amount)}</span>
+      <div className="valor-liquido">
+        <strong className="valor-title">Valor Líquido Registrado</strong>
+        <span className="valor-money">{formatCurrency(transaction.amount)}</span>
       </div>
       <hr />
-      <div className="desc">
-        <strong>Descrição</strong>
-        <span>{transaction.description}</span>
-      </div>
-      <div className="tipo">
-        <strong>Tipo:</strong>
-        <span>{transaction.type}</span>
-      </div>
-      <div className="categoria">
-        <strong>Categoria:</strong>
-        <span>{transaction.category}</span>
-      </div>
-      <div className="data">
-        <strong>Data:</strong>
-        {formatDate(transaction.date)}
-      </div>
+      <table className="table-details">
+        <tr>
+          <td className="desc">
+            <strong>Descrição:</strong>
+            <span>{transaction.description}</span>            
+          </td>
+          <td className="tipo">
+            <strong>Tipo:</strong>
+            <span>{transaction.type}</span>
+          </td>
+        </tr>
+        <tr>
+          <td className="categoria">
+            <strong>Categoria:</strong>
+            <span>{transaction.category}</span>
+          </td>
+          <td className="data">
+            <strong>Data:</strong>
+            {formatDate(transaction.date)}
+          </td>
+        </tr>
+      </table>
     </section>
     </div>
   )
