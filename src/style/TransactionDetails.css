@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .detalhes-transacao{
     background-color: #0F131C;
+    font-family: "Inter";
 }
 h1{
     font-family: "Plus Jakarta Sans";
@@ -17,6 +18,22 @@ h1{
 .header{
     display: flex;align-items: baseline; flex-direction: column;
 }
-.valor{
+.valor-liquido{
     display: flex; justify-content: center; align-items: center; flex-direction: column;
+
+}
+.table-details{
+    padding-left: 40%;
+}
+.valor-title{
+    font-family: "Inter";
+    color: #908FA0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+}
+.valor-money{
+    font-family: "Plus Jakarta Sans";
+    font-size: 48px;
+    font-weight: bold;
 }
