@@ -46,7 +46,7 @@ header{
     display: flex; justify-content: center;
     font-size: 15px; font-family: "Plus Jakarta Sans";
 }
-.valor{text-align: center;}
+.valor{text-align: center; padding-top: 18px;}
 .valor-info{text-align: center;}
 .tipo{
     padding: 16px; text-align: center;
