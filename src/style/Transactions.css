@@ -46,7 +46,7 @@ header{
     display: flex; justify-content: center;
     font-size: 15px; font-family: "Plus Jakarta Sans";
 }
-.valor{text-align: center; padding-top: 18px;}
+.valor{text-align: center;}
 .valor-info{text-align: center;}
 .tipo{
     padding: 16px; text-align: center;
@@ -55,7 +55,7 @@ header{
     text-align: center;
 }
 .categoria{
-    text-align: center; margin: 8px 32.7px;
+    text-align: center; margin: 9px 32.7px;
 }
 .category-info{
     text-align: center; display: flex; justify-content: center; align-items: center;
