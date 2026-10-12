@@ -37,17 +37,17 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
         <div>
           <label htmlFor="type-filter" className="tipo-filter">Filtrar por Tipo:</label>
           <select id="type-filter" value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
-            <option value="Todas">Todas</option>
-            <option value="Receita">Receitas</option>
-            <option value="Despesa">Despesas</option>
+            <option value="Todas" className="tipos">Todas</option>
+            <option value="Receita" className="tipos">Receitas</option>
+            <option value="Despesa" className="tipos">Despesas</option>
           </select>
         </div>
         <div>
           <label htmlFor="category-filter" className="categoria-filter">Filtrar por Categoria:</label>
           <select id="category-filter" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-            <option value="Todas">Todas as Categorias</option>
+            <option value="Todas" className="categories">Todas as Categorias</option>
             {CATEGORIES.map((category) => (
-              <option key={category} value={category}>{category}</option>
+              <option key={category} value={category} className="categories">{category}</option>
             ))}
           </select>
         </div>
