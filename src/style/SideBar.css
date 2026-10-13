@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+aside{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0A0E16;
+    padding: 16px;
+}
+.logo-info{
+    display: flex;
+    flex-direction: row;
+}
+.logo-img{
+    width: 32px;
+    height: 32px;
+}
+.logo-text{
+    display: flex;
+    flex-direction: column;
+}
+.financetracker{
+    font-family: "Plus Jakarta Sans";
+    font-size: 18px;
+    color: #DFE2EE;
+    font-weight: 500;
+}
+.institutional{
+    font-family: "Inter";
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #70FFBA;
+    font-weight: 500;
+}
+.links{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    text-decoration: none;
+    color: #C7C4D7;
+    font-family: "Inter";
+}
