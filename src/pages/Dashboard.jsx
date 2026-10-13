@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Summary from "../components/Summary";
+import SideBar from "../components/SideBar";
 
 export default function Dashboard({transactions = []}) {
   const list = Array.isArray(transactions) ? transactions : [];
@@ -12,6 +13,7 @@ export default function Dashboard({transactions = []}) {
   const total = income - outcome
   return (
     <>
+      <SideBar></SideBar>
       <main>
         <h1>Personal Finance Tracker</h1>
         <p>Gerencie suas finanças pessoais de forma simples, acompanhando suas receitas, despesas e o saldo em tempo real.</p>
