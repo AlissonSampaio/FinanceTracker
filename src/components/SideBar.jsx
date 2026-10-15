@@ -14,8 +14,6 @@ const SideBar = () => {
             <NavLink to={"/"} className="link">Dashboard</NavLink>
             <NavLink to={"/transactions"} className="link">Transações</NavLink>
             <NavLink to={"/transactions/new"} className="link">Nova Transação</NavLink>
-            <NavLink className="link">Relatórios</NavLink>
-            <NavLink className="link">Configurações</NavLink>
         </div>
       </aside>
     </>
