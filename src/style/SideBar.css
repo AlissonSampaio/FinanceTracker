@@ -44,4 +44,11 @@ aside{
     text-decoration: none;
     color: #C7C4D7;
     font-family: "Inter";
+    margin-bottom: 6px;
+}
+.dash_img, .transactions_img, .newtran_img{
+    height: 15px; width: 15px; margin-right: 8px;
+}
+.div_dashboard, .div_transactions, .div_newtran{
+    display: flex; align-items: center;
 }
