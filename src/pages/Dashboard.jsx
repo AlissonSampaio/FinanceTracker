@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Summary from "../components/Summary";
 import SideBar from "../components/SideBar";
+import "../style/Dashboard.css";
 
 export default function Dashboard({transactions = []}) {
   const list = Array.isArray(transactions) ? transactions : [];
@@ -14,19 +15,21 @@ export default function Dashboard({transactions = []}) {
   return (
     <>
       <SideBar></SideBar>
-      <main>
+      <div className="dashboard">
+        <main>
         <h1>Personal Finance Tracker</h1>
         <p>Gerencie suas finanças pessoais de forma simples, acompanhando suas receitas, despesas e o saldo em tempo real.</p>
-      </main>
-      <Summary income={income} outcome={outcome} total={total}/>
-      <main>
-        <h2>Ações Rápidas</h2>
-        <div>
-          <Link to="/transactions/new">+ Nova Movimentação</Link>
-          <br />
-          <Link to="/transactions">Ver Histórico Completo</Link>
-        </div>
-      </main>
+        </main>
+        <Summary income={income} outcome={outcome} total={total}/>
+        <main>
+          <h2>Ações Rápidas</h2>
+          <div>
+            <Link to="/transactions/new">+ Nova Movimentação</Link>
+            <br />
+            <Link to="/transactions">Ver Histórico Completo</Link>
+          </div>
+        </main>
+      </div>
     </>
   )
 }
