@@ -6,6 +6,7 @@ import { formatDate } from "../utils/formatDate";
 import '../style/Transactions.css';
 import Lixo from "../assets/Lixo.png";
 import Eye from "../assets/eye-details.png";
+import SideBar from "../components/SideBar";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
@@ -23,13 +24,14 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
   });
   return (
     <div className="transactions">
+      <SideBar></SideBar>
       <header>
         <div className="title-and-info">
           <div className="title-main">
             <h1 className="Title-transacao">Transações</h1>
             <h5 className="subtitle">live ledger</h5>
           </div>
-          <span className="main-info"><p>Consulte, audite e filtre </p><p>todas as movimentações financeiras com</p> <p>precisão institucional.</p></span>
+          <span className="main-info"><p>Consulte, audite e filtre todas as</p><p>movimentações financeiras com</p> <p>precisão institucional.</p></span>
         </div>
         <Link to="/transactions/new" className="nova-transacao">+ Nova Transação</Link>
       </header>
@@ -50,6 +52,14 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
               <option key={category} value={category} className="categories">{category}</option>
             ))}
           </select>
+        </div>
+      </section>
+      <section className="visual_transactions">
+        <div>
+          <span className="titlevisual">Entradas totais</span>
+        </div>
+        <div>
+          <span className="titlevisual">Saídas totais</span>
         </div>
       </section>
       <section>
