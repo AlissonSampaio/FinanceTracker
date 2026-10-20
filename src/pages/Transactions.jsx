@@ -9,6 +9,7 @@ import Eye from "../assets/eye-details.png";
 import SideBar from "../components/SideBar";
 import faArrowDown from "../assets/arrow-down-solid.png";
 import faArrowUp from "../assets/arrow-up-solid.png";
+import Bank from "../assets/building-columns-solid.png";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
 
@@ -20,6 +21,7 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
   const list = Array.isArray(transactions) ? transactions : []; //Garante que list seja um array seguro para evitar erros
   const income = list.filter((t) => t.type === "Receita").reduce((acc,t) => acc + Number(t.amount),0);
   const outcome = list.filter((t) => t.type === "Despesa").reduce((acc,t) => acc + Number(t.amount),0);
+  const total = income - outcome;
   const filteredTransactions = list.filter((transaction) => { //filter para analisar cada transação da lista original em sequência
     // função que confirma se o tipo de transação corresponde ao filtro selecionado ou se a opção Todas foi selecionada
     const matchesType = selectedType === 'Todas' || transaction.type === selectedType;
@@ -73,6 +75,13 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
             <img src={faArrowUp} alt="" className="faArrowUp"/>
           </div>
           <span className="money_outflow">- {formatCurrency(outcome)}</span>
+        </div>
+        <div className="cash_entries">
+          <div className="transactionstotal">
+            <span className="titlevisual">Saldo Operacional</span>
+            <img src={Bank} alt="" className="Bank"/>
+          </div>
+          <span className="money_total">{formatCurrency(total)}</span>
         </div>
       </section>
       <section>

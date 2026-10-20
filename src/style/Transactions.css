@@ -108,7 +108,10 @@ option, select{
 .faArrowUp{
     height: 12px; width: 12px; background-color: #3B242F; padding: 8px; border-radius: 10px; margin-left: 61.5px;
 }
-.transactionsplus, .transactionsminus{
+.Bank{
+    height: 12px; width: 12px; background-color: #2E3050; padding: 8px; border-radius: 10px; margin-left: 61.5px;
+}
+.transactionsplus, .transactionsminus, .transactionstotal{
     display: flex; align-items: center;
 }
 .money_entry{
@@ -116,6 +119,9 @@ option, select{
 }
 .money_outflow{
     font-family: "Plus Jakarta Sans"; font-weight: bold; color: #FFB2B7; font-size: 24px;
+}
+.money_total{
+    font-family: "Plus Jakarta Sans"; font-weight: bold; color: #DFE2EE; font-size: 24px;
 }
 .summary{
     display: flex; 
