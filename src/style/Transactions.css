@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .transactions{
-    background-color: #0F131C; color: #DFE2EE; margin-left: 280px; padding: 0px 24px;
+    background-color: #0F131C; color: #DFE2EE; margin-left: 280px; padding: 0px 24px; height: 100%;
 }
 header{
     display: flex; justify-content: space-between; align-items: baseline;
@@ -97,5 +97,26 @@ option, select{
     margin-top: 24px;
 }
 .titlevisual{
-    color: #908FA0; font-family: "Inter"; text-transform: uppercase;
+    color: #908FA0; font-family: "Inter"; text-transform: uppercase; font-size: 11px;
+}
+.cash_entries{
+    margin-right: 16px; padding: 16px; background-color: #1C2028; border-radius: 10px;
+}
+.faArrowDown{
+    height: 12px; width: 12px; background-color: #143936; padding: 8px; border-radius: 10px; margin-left: 61.5px;
+}
+.faArrowUp{
+    height: 12px; width: 12px; background-color: #3B242F; padding: 8px; border-radius: 10px; margin-left: 61.5px;
+}
+.transactionsplus, .transactionsminus{
+    display: flex; align-items: center;
+}
+.money_entry{
+    font-family: "Plus Jakarta Sans"; font-weight: bold; color: #70FFBA; font-size: 24px;
+}
+.money_outflow{
+    font-family: "Plus Jakarta Sans"; font-weight: bold; color: #FFB2B7; font-size: 24px;
+}
+.summary{
+    display: flex; 
 }

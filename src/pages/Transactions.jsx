@@ -7,6 +7,9 @@ import '../style/Transactions.css';
 import Lixo from "../assets/Lixo.png";
 import Eye from "../assets/eye-details.png";
 import SideBar from "../components/SideBar";
+import faArrowDown from "../assets/arrow-down-solid.png";
+import faArrowUp from "../assets/arrow-up-solid.png";
+import Summary from "../components/Summary";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
   // Filtros do tipo e da categoria
@@ -55,13 +58,22 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
         </div>
       </section>
       <section className="visual_transactions">
-        <div>
-          <span className="titlevisual">Entradas totais</span>
+        <div className="cash_entries">
+          <div className="transactionsplus">
+            <span className="titlevisual">Entradas totais</span>
+            <img src={faArrowDown} alt="" className="faArrowDown"/>
+          </div>
+          <span className="money_entry">+ R$ 10.400,00</span>
         </div>
-        <div>
-          <span className="titlevisual">Saídas totais</span>
+        <div className="cash_entries">
+          <div className="transactionsminus">
+            <span className="titlevisual">Saídas totais</span>
+            <img src={faArrowUp} alt="" className="faArrowUp"/>
+          </div>
+          <span className="money_outflow">- R$ 510,40</span>
         </div>
       </section>
+      <Summary income={0} outcome={0} total={0} className="summary"/>
       <section>
         {filteredTransactions.length === 0 ? (
           <p className="sem-transacao">Nenhuma transação encontrada</p>
