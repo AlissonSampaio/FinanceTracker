@@ -9,15 +9,17 @@ import Eye from "../assets/eye-details.png";
 import SideBar from "../components/SideBar";
 import faArrowDown from "../assets/arrow-down-solid.png";
 import faArrowUp from "../assets/arrow-up-solid.png";
-import Summary from "../components/Summary";
 
 export default function Transactions({transactions = [], onDeleteTransaction}) {
+
+
   // Filtros do tipo e da categoria
   const [selectedType, setSelectedType] = useState('Todas');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
 
   const list = Array.isArray(transactions) ? transactions : []; //Garante que list seja um array seguro para evitar erros
-
+  const income = list.filter((t) => t.type === "Receita").reduce((acc,t) => acc + Number(t.amount),0);
+  const outcome = list.filter((t) => t.type === "Despesa").reduce((acc,t) => acc + Number(t.amount),0);
   const filteredTransactions = list.filter((transaction) => { //filter para analisar cada transação da lista original em sequência
     // função que confirma se o tipo de transação corresponde ao filtro selecionado ou se a opção Todas foi selecionada
     const matchesType = selectedType === 'Todas' || transaction.type === selectedType;
@@ -63,17 +65,16 @@ export default function Transactions({transactions = [], onDeleteTransaction}) {
             <span className="titlevisual">Entradas totais</span>
             <img src={faArrowDown} alt="" className="faArrowDown"/>
           </div>
-          <span className="money_entry">+ R$ 10.400,00</span>
+          <span className="money_entry">+ {formatCurrency(income)}</span>
         </div>
         <div className="cash_entries">
           <div className="transactionsminus">
             <span className="titlevisual">Saídas totais</span>
             <img src={faArrowUp} alt="" className="faArrowUp"/>
           </div>
-          <span className="money_outflow">- R$ 510,40</span>
+          <span className="money_outflow">- {formatCurrency(outcome)}</span>
         </div>
       </section>
-      <Summary income={0} outcome={0} total={0} className="summary"/>
       <section>
         {filteredTransactions.length === 0 ? (
           <p className="sem-transacao">Nenhuma transação encontrada</p>
