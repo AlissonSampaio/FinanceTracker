@@ -1,3 +1,45 @@
 .dashboard{
     margin-left: 280px;
+    padding-left: 24px; padding-right: 24px;
+    background-color: #0F131C;
 }
+.title-dashboard{
+    color:#DFE2EE;
+    font-weight: 500;
+}
+.info-dashboard{
+    color: #C7C4D7;
+    font-family: "Inter"; font-size: 14px;
+    line-height: 60%;
+}
+.dash-transactions{
+    display: flex; flex-direction: row; justify-content: space-between; margin-top: 40px;
+}
+.dash-moneyvisual{display: flex; justify-content: space-between; align-items: center; flex-direction: row; 
+    background-color: #181C24; padding: 24px; border-radius: 10px;}
+.titleandmoney{display: flex; flex-direction: column;}
+.moneytitle-dashboard{
+    color: #908FA0; font-family: "Inter"; text-transform: uppercase; font-weight: 500; font-size: 11px;
+}
+.dashboard-total{
+    font-family: "Plus Jakarta Sans"; color: #DFE2EE; font-weight: bold; font-size: 32px;
+}
+.dashboard-income{
+    font-family: "Plus Jakarta Sans"; color: #70FFBA; font-weight: bold; font-size: 32px;
+}
+.ArrowReceipts{
+    height: 11.92px; width: 11.92px; padding: 14px; background-color: #143936; border-radius: 10px;
+    margin-left: 5px;
+}
+.dashboard-outcome{
+    font-family: "Plus Jakarta Sans"; color: #FFB2B7; font-weight: bold; font-size: 32px;
+}
+.ArrowOutcome{
+    height: 14.67px; width: 14.67px; padding: 14px; background-color: #3B242F; border-radius: 10px;
+}
+.vision{
+    text-transform: uppercase; color: #70FFBA; font-family: "Inter"; background-color: #0E2828;
+    font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px;
+}
+.circle-solid{height: 6px; margin-left: 4px; margin-right: 4px;}
+.realtime{font-size: 11px; font-family: "Inter"; color: #C7C4D7; font-weight: 500;}
