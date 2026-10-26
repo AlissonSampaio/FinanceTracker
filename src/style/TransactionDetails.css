@@ -16,15 +16,17 @@ h1{
     padding: 6px 14px;
 }
 .header{
-    display: flex;align-items: baseline; flex-direction: column;
+    display: flex; align-items: baseline; flex-direction: column;
 }
 .valor-liquido{
     display: flex; justify-content: center; align-items: center; flex-direction: column;
-
 }
-.table-details{
-    padding-left: 40%;
+.details-table{display: flex;flex-direction: column;height: 256px; width: 479.33px; margin-left: 40%;}
+.title-tabledesc, .category-title, .date-title, .type-title{
+    font-family: "Inter"; font-size: 11px; color: #908FA0; font-weight: 600; text-transform: uppercase; 
+    text-align: start; width: 199.67px;
 }
+.description-info, .info-category, .date-info, .type-info{width: 199.67px; text-align: start;}
 .valor-title{
     font-family: "Inter";
     color: #908FA0;

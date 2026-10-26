@@ -30,27 +30,31 @@ export default function TransactionDetails({transactions = []}) {
         <span className="valor-money">{formatCurrency(transaction.amount)}</span>
       </div>
       <hr />
-      <table className="table-details">
-        <tr>
-          <td className="desc">
-            <strong>Descrição:</strong>
-            <span>{transaction.description}</span>            
-          </td>
-          <td className="tipo">
-            <strong>Tipo:</strong>
-            <span>{transaction.type}</span>
-          </td>
-        </tr>
-        <tr>
-          <td className="categoria">
-            <strong>Categoria:</strong>
-            <span>{transaction.category}</span>
-          </td>
-          <td className="data">
-            <strong>Data:</strong>
-            {formatDate(transaction.date)}
-          </td>
-        </tr>
+      <table className="details-table">
+        <thead className="details-title1">
+          <tr>
+            <th className="title-tabledesc">Descrição</th>
+            <th className="category-title">Categoria</th>
+          </tr>
+        </thead>
+        <tbody className="details-info1">
+          <tr>
+            <td className="description-info">{transaction.description}</td>
+            <td className="info-category">{transaction.category}</td>
+          </tr>
+        </tbody>
+        <thead className="details-title2">
+          <tr>
+            <th className="date-title">Data do registro</th>
+            <th className="type-title">Tipo</th>
+          </tr>
+        </thead>
+        <tbody className="details-info2">
+          <tr>
+            <td className="date-info">{formatDate(transaction.date)}</td>
+            <td className="type-info">{transaction.type}</td>
+          </tr>
+        </tbody>
       </table>
     </section>
     </div>
