@@ -50,14 +50,6 @@ export default function Dashboard({transactions = []}) {
             <img src={ArrowOutcome} alt="" className="ArrowOutcome"/>
           </main>
         </section>
-        <main>
-          <h2>Ações Rápidas</h2>
-          <div>
-            <Link to="/transactions/new">+ Nova Movimentação</Link>
-            <br />
-            <Link to="/transactions">Ver Histórico Completo</Link>
-          </div>
-        </main>
       </div>
     </>
   )
