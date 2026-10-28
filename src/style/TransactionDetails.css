@@ -21,7 +21,7 @@ h1{
 .valor-liquido{
     display: flex; justify-content: center; align-items: center; flex-direction: column;
 }
-.details-table{display: flex;flex-direction: column;height: 256px; margin-left: 10%;}
+.details-table{display: flex;flex-direction: column;height: 256px; margin-left: 40%;}
 .title-tabledesc, .category-title, .date-title, .type-title{
     font-family: "Inter"; font-size: 11px; color: #908FA0; font-weight: 600; text-transform: uppercase; 
     text-align: start; width: 250px;
