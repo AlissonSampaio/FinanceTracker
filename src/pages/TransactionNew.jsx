@@ -44,6 +44,7 @@ export default function TransactionNew({ onAddTransaction }) {
       type: formData.type,
       category: formData.category,
       date: formData.date,
+      createdAt: new Date().toISOString(),
     };
     onAddTransaction(newTransaction);
     navigate("/transactions");
