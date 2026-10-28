@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SideBar from "../components/SideBar";
 import "../style/Dashboard.css";
 import Circle from "../assets/circle-solid.png";
