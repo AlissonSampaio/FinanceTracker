@@ -3,6 +3,7 @@ import { formatCurrency } from "../utils/formatCurrency";
 // import { formatDate } from "../utils/formatDate";
 import "../style/TransactionDetails.css"
 import { formatDateString } from "../utils/formatDateString";
+import Calendar from "../assets/calendar-regular.png";
 
 export default function TransactionDetails({transactions = []}) {
   const {id} = useParams();
@@ -52,7 +53,12 @@ export default function TransactionDetails({transactions = []}) {
         </thead>
         <tbody className="details-info2">
           <tr>
-            <td className="date-info">{formatDateString(transaction.date)}</td>
+            <td className="date-info">
+              <div>
+                <img src={Calendar} alt="" className="calendar"/>
+                <span>{formatDateString(transaction.date)}</span>
+              </div>
+            </td>
             <td className="type-info">{transaction.type}</td>
           </tr>
         </tbody>
